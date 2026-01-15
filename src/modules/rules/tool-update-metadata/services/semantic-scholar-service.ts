@@ -12,7 +12,6 @@ export const SemanticScholarService = defineService<Result>({
       "publicationTypes",
       "title",
       "authors",
-      "abstract",
       "externalIds",
       "url",
       "venue",
@@ -20,6 +19,8 @@ export const SemanticScholarService = defineService<Result>({
       "publicationDate",
       "journal",
     ];
+
+    console.log("This is the semantic scholar service");
 
     let paperID: string;
     if (identifiers.arXiv)
@@ -59,7 +60,6 @@ export const SemanticScholarService = defineService<Result>({
           : undefined,
       creators: [],
       title: res.title,
-      abstractNote: res.abstract,
       DOI: res.externalIds?.DOI,
       publicationTitle: res.venue,
       conferenceName: res.publicationVenue?.name,
@@ -75,7 +75,6 @@ export const SemanticScholarService = defineService<Result>({
 
 interface Result {
   paperId?: string;
-  abstract?: string;
   authors?: {
     name: string;
     authorId: string;

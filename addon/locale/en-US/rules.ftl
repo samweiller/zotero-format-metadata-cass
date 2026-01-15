@@ -63,6 +63,22 @@ rule-correct-title-sentence-option-custom-term-button =
 rule-correct-title-sentence-option-custom-term-desc = Custom terms file should be CSV: first column search term, second column replacement, no headers. Regex supported. Separator must be comma or semicolon (no tabs).
 
 
+## correct-title-punctuation
+rule-correct-title-punctuation =
+  .label = Punctuation in title shoule be normalized
+rule-correct-title-punctuation-menu-field =
+  .label = Normalize punctuation (Linter)
+rule-correct-title-punctuation-quotes =
+  .label = Convert quotes to curly
+
+
+## correct-creators-punctuation
+rule-correct-creators-punctuation =
+  .label = Punctuation in creators shoule be normalized
+rule-correct-creators-punctuation-menu-field =
+  .label = Normalize punctuation hyphens (Linter)
+
+
 ## correct-shortTitle-sentence-case
 rule-correct-shortTitle-sentence-case =
   .label = ShortTitle should be sentence case
@@ -290,6 +306,15 @@ rule-tool-update-metadata-option-semanticScholarToken-desc =
   When updating field data, the plugin queries its bibliographic data from Semantic Scholar. 
   By default, this API limits requests to 1 per second, and you can increase the rate limit by applying for a free API Key.
 rule-tool-update-metadata-option-semanticScholarToken-link = Request API key
+
+rule-tool-update-metadata-dialog-title = Update Item Metadata
+rule-tool-update-metadata-dialog-mode = Update Mode
+rule-tool-update-metadata-dialog-mode-all = All Fields
+rule-tool-update-metadata-dialog-mode-blank = Blank Fields Only
+rule-tool-update-metadata-dialog-allow-type-changed = Allow Change Item Type
+rule-tool-update-metadata-dialog-notes = Notes
+rule-tool-update-metadata-dialog-note-rate-limit = Some APIs have rate limits; please avoid bulk processing.
+rule-tool-update-metadata-dialog-note-chinese-limit = Chinese publications could not use this feature due to data source limitations.
 
 
 ## tool-get-short-doi

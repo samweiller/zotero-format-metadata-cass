@@ -12,6 +12,7 @@ declare namespace _ZoteroTypes {
       "lint.onGroup": boolean;
       "lint.notify": boolean;
       "lint.onApiImport": boolean;
+      "lint.numConcurrent": number;
       "richtext.toolBar": boolean;
       "richtext.hotkey": boolean;
       "richtext.preview": boolean;
@@ -41,9 +42,12 @@ declare namespace _ZoteroTypes {
       "rule.correct-title-sentence-case": boolean;
       "rule.correct-title-sentence-case.custom-term-path": string;
       "rule.correct-title-chemical-formula": boolean;
+      "rule.correct-title-punctuation": boolean;
+      "rule.correct-title-punctuation.quotes": boolean;
       "rule.correct-shortTitle-sentence-case": boolean;
       "rule.correct-creators-case": boolean;
       "rule.correct-creators-pinyin": boolean;
+      "rule.correct-creators-punctuation": boolean;
       "rule.correct-date-format": boolean;
       "rule.correct-publication-title-alias": boolean;
       "rule.correct-publication-title-case": boolean;

@@ -4,10 +4,8 @@ import { defineService } from "./base-service";
 export const SemanticScholarService = defineService<Result>({
   id: "semantic-scholar-service",
   name: "Semantic Scholar Service",
-  // TODO: set cooldown to 1_000 when token is set,
-  // need to resolve esbuild "ReferenceError: Zotero is not defined" error
-  // get cooldown() { return getPref("semanticScholarToken") ? 1_000 : 3_000; },
-  cooldown: 1_000,
+  // set cooldown to 1_000 when token is set,
+  get cooldown() { return getPref("semanticScholarToken") ? 1_000 : 3_000; },
   shouldApply: () => true,
   async fetch({ identifiers }) {
     const fields: (keyof Result)[] = [
@@ -63,7 +61,7 @@ export const SemanticScholarService = defineService<Result>({
       creators: [],
       title: res.title,
       DOI: res.externalIds?.DOI,
-      publicationTitle: res.venue?.name,
+      publicationTitle: res.venue,
       conferenceName: res.publicationVenue?.name,
       proceedingsTitle: res.publicationVenue?.name,
       ISSN: res.publicationVenue?.issn,
@@ -101,7 +99,5 @@ interface Result {
   };
   title?: string;
   url?: string;
-  venue?: {
-    name?: string;
-  };
+  venue?: string;
 }

@@ -4,7 +4,7 @@
 </linkset>
 <vbox
   id="__addonRef__"
-  onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', {window})"
+  onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window })"
 >
   <!-- 一般设置 -->
   <groupbox>
@@ -32,6 +32,15 @@
       preference="lint.onApiImport"
       native="true"
     />
+    <!-- lint.numConcurrent -->
+    <hbox align="center">
+      <label data-l10n-id="lint-numConcurrent" />
+      <html:input type="number" preference="lint.numConcurrent" />
+      <description
+        data-l10n-id="lint-numConcurrent-description"
+        class="linter-pref-description"
+      />
+    </hbox>
   </groupbox>
 
   <!-- 是否启用富文本工具 -->
@@ -52,10 +61,7 @@
       preference="richtext.hotkey"
       native="true"
     />
-    <label
-      data-l10n-id="richtext-restart-needed"
-      class="linter-pref-description"
-    />
+    <label data-l10n-id="restart-needed" class="linter-pref-description" />
   </groupbox>
 
   <!-- 详细设置 -->
@@ -92,12 +98,6 @@
     <!-- General Field: Title -->
     <groupbox>
       <label><html:h2 data-l10n-id="section-title" /></label>
-      <!-- 需要短标题 -->
-      <checkbox
-        data-l10n-id="rule-require-short-title"
-        preference="rule.require-short-title"
-        native="true"
-      />
 
       <!-- correct-title-sentence-case -->
       <checkbox
@@ -130,6 +130,34 @@
         />
       </vbox>
 
+      <!-- no-title-trailing-dot -->
+      <checkbox
+        data-l10n-id="rule-no-title-trailing-dot"
+        preference="rule.no-title-trailing-dot"
+        native="true"
+      />
+
+      <!-- correct-title-punctuation -->
+      <checkbox
+        data-l10n-id="rule-correct-title-punctuation"
+        preference="rule.correct-title-punctuation"
+        native="true"
+      />
+      <vbox class="indented-pref">
+        <checkbox
+          data-l10n-id="rule-correct-title-punctuation-quotes"
+          preference="rule.correct-title-punctuation.quotes"
+          native="true"
+        />
+      </vbox>
+
+      <!-- 需要短标题 -->
+      <checkbox
+        data-l10n-id="rule-require-short-title"
+        preference="rule.require-short-title"
+        native="true"
+      />
+
       <!-- correct-shortTitle-sentence-case -->
       <checkbox
         data-l10n-id="rule-correct-shortTitle-sentence-case"
@@ -139,13 +167,6 @@
       <description
         data-l10n-id="rule-correct-shortTitle-sentence-case-description"
         class="indented-pref linter-pref-description"
-      />
-
-      <!-- no-title-trailing-dot -->
-      <checkbox
-        data-l10n-id="rule-no-title-trailing-dot"
-        preference="rule.no-title-trailing-dot"
-        native="true"
       />
     </groupbox>
 
@@ -168,6 +189,12 @@
       <checkbox
         data-l10n-id="rule-correct-creators-pinyin"
         preference="rule.correct-creators-pinyin"
+        native="true"
+      />
+      <!-- correct-creators-punctuation -->
+      <checkbox
+        data-l10n-id="rule-correct-creators-punctuation"
+        preference="rule.correct-creators-punctuation"
         native="true"
       />
     </groupbox>

@@ -49,7 +49,7 @@ rule-require-short-title =
 
 ## correct-title-sentence-case
 rule-correct-title-sentence-case =
-  .label = 标题标题应以句子式大写存储
+  .label = 标题应以句子式大写存储
 rule-correct-title-sentence-case-menu-item =
   .label = 将标题改为句首大写
 rule-correct-title-sentence-case-menu-field =
@@ -61,6 +61,22 @@ rule-correct-title-sentence-option-custom-term = 自定义术语：
 rule-correct-title-sentence-option-custom-term-button = 
   .label = 选择
 rule-correct-title-sentence-option-custom-term-desc =  自定义术语文件使用 CSV 文件格式，第一列为搜索词，第二列为替换词，不需要标题，搜索词支持正则表达式。分隔符可以为逗号或分号，但须统一，不得为制表符。
+
+
+## correct-title-punctuation
+rule-correct-title-punctuation =
+  .label = 标题中的符号应规范
+rule-correct-title-punctuation-menu-field =
+  .label = 规范符号（Linter）
+rule-correct-title-punctuation-quotes =
+  .label = 直引号转换为弯引号
+
+
+## correct-creators-punctuation
+rule-correct-creators-punctuation =
+  .label = 作者名中的符号应规范
+rule-correct-creators-punctuation-menu-field =
+  .label = 规范符号（Linter）
 
 
 ## correct-shortTitle-sentence-case
@@ -290,6 +306,15 @@ rule-tool-update-metadata-option-semanticScholarToken-desc =
   当更新字段数据时，插件会从 Semantic Scholar 查询其题录数据。
   默认的，此 API 限制请求 1 次/秒，你可以通过免费申请 API Key 来增加速率限制。
 rule-tool-update-metadata-option-semanticScholarToken-link = 申请
+
+rule-tool-update-metadata-dialog-title = 更新条目元数据
+rule-tool-update-metadata-dialog-mode = 更新模式
+rule-tool-update-metadata-dialog-mode-all = 所有字段
+rule-tool-update-metadata-dialog-mode-blank = 仅空白字段
+rule-tool-update-metadata-dialog-allow-type-changed = 允许更改条目类型
+rule-tool-update-metadata-dialog-notes = 说明
+rule-tool-update-metadata-dialog-note-rate-limit = 某些 API 有速率限制；请避免批量处理。
+rule-tool-update-metadata-dialog-note-chinese-limit = 由于数据源限制，中文出版物无法使用此功能。
 
 
 ## tool-get-short-doi

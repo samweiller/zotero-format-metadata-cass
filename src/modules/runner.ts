@@ -5,6 +5,7 @@ import { withTimeout } from "es-toolkit";
 import { DataLoader } from "../utils/data-loader";
 import { toArray } from "../utils/general";
 import { createLogger } from "../utils/logger";
+import { getPref } from "../utils/prefs";
 import { isFieldValidForItemType } from "../utils/zotero";
 import { createReporter, ProgressUI } from "./reporter";
 import { Rules } from "./rules";
@@ -84,7 +85,7 @@ export class LintRunner {
   });
 
   private readonly caller = new ConcurrentCaller({
-    numConcurrent: 1,
+    numConcurrent: getPref("lint.numConcurrent") || 1,
     stopOnError: false,
     logger: logger.debug,
     onError: (err: any) => logger.error(err),
@@ -120,8 +121,6 @@ export class LintRunner {
     for (const item of items) {
       this.enqueueItem(item, rules, optionsMap);
     }
-
-    this.setInterval(this.getMaxIntervalFromRules(rules));
 
     this.caller.wait().then(() => this.finish());
   }
@@ -159,15 +158,6 @@ export class LintRunner {
     logger.debug("Options map:", optionsMap);
     return optionsMap;
   }
-
-  private getMaxIntervalFromRules(rules: Rule<any>[]): number {
-    return Math.max(...rules.map(rule => rule.cooldown || 0));
-  }
-
-  public setInterval(interval: number) {
-    this.caller._interval = interval;
-    logger.debug("Set interval to", interval);
-  };
 
   // ----------------------------
   // Queue
